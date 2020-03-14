@@ -1,32 +1,24 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
+    <!-- 头部 -->
+    <layoutHeader />
+    <div class="wrapper">
+      <router-view/>
     </div>
-    <router-view/>
+    <!-- 尾部 -->
+    <layoutFooter />
   </div>
 </template>
-
-<style lang="less">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+<script>
+import layoutHeader from '@/components/layout-header'
+import layoutFooter from '@/components/layout-footer'
+export default {
+  components: {
+    layoutHeader,
+    layoutFooter
   }
 }
+</script>
+<style lang="less" >
+
 </style>
